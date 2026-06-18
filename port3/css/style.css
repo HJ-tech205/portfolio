@@ -1,0 +1,364 @@
+/* --- High-Performance Reset & Palette Variables --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --f1-red: #e10600;
+    --carbon-base: #0b0c10;
+    --paddock-dark: #111217;
+    --asphalt-grid: #1a1b22;
+    --drs-green: #00ff66;
+    --txt-main: #ffffff;
+    --txt-muted: #8a99ad;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    background-color: var(--carbon-base);
+    color: var(--txt-main);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* --- Layout Split Chassis (Fixed Real-Estate Calibration) --- */
+.dashboard-wrapper {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* --- Sidebar Control Tower --- */
+.pit-sidebar {
+    background-color: var(--paddock-dark);
+    border-right: 2px solid var(--asphalt-grid);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    z-index: 100;
+}
+
+.team-brand {
+    font-weight: 900;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+
+.red-dot { color: var(--f1-red); }
+
+.telemetry-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 60px 0;
+}
+
+.menu-tab {
+    background: transparent;
+    border: 1px solid var(--asphalt-grid);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: skewX(-6deg);
+}
+
+.sector-num {
+    background: var(--asphalt-grid);
+    color: var(--txt-muted);
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 3px 6px;
+}
+
+.tab-label {
+    color: var(--txt-muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.menu-tab:hover, .menu-tab.active {
+    border-color: var(--f1-red);
+    background: rgba(225, 6, 0, 0.05);
+}
+
+.menu-tab:hover .tab-label, .menu-tab.active .tab-label {
+    color: var(--txt-main);
+}
+
+.menu-tab.active .sector-num {
+    background: var(--f1-red);
+    color: var(--txt-main);
+}
+
+.sidebar-status {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--txt-muted);
+}
+
+.live-pulse {
+    width: 6px;
+    height: 6px;
+    background: var(--drs-green);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--drs-green);
+}
+
+/* --- Main Screen Component Display (Calculated Grid Alignment) --- */
+.dashboard-screen {
+    flex: 1;
+    margin-left: 280px;
+    width: calc(100% - 280px);
+    padding: 60px 6%;
+    background-image: radial-gradient(var(--asphalt-grid) 1.5px, transparent 1.5px);
+    background-size: 30px 30px;
+    min-height: 100vh;
+}
+
+.portfolio-screen {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px) scale(0.99);
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-screen.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* --- Section Title Uniformity --- */
+.screen-tag {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--f1-red);
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+h2 { font-size: 2.5rem; font-weight: 900; text-transform: uppercase; }
+.f1-divider { width: 80px; height: 4px; background: var(--f1-red); margin: 15px 0 40px 0; }
+
+/* ================= PAGE 1 DETAILS ================= */
+.intro-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 60px;
+    align-items: center;
+    padding-top: 20px;
+}
+
+/* --- Upgraded Picture Housing & HUD Overlay Effects --- */
+.picture-housing {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: 2px solid var(--asphalt-grid);
+    background-color: #000000;
+    overflow: hidden;
+    transform: skewX(-3deg);
+    box-shadow: 0 0 20px rgba(225, 6, 0, 0.15);
+}
+
+.driver-portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(100%) contrast(125%) brightness(85%);
+    transition: filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.telemetry-tint-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(225, 6, 0, 0.15);
+    mix-blend-mode: color;
+    pointer-events: none;
+    transition: background 0.4s ease;
+    z-index: 2;
+}
+
+.glitch-scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(225, 6, 0, 0.04), rgba(0, 255, 66, 0.02), rgba(0, 0, 255, 0.04));
+    background-size: 100% 4px, 6px 100%;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Hover States to Reveal Sharp Un-tinted Image Details */
+.picture-housing:hover .driver-portrait { 
+    filter: grayscale(0%) contrast(100%) brightness(100%); 
+}
+
+.picture-housing:hover .telemetry-tint-overlay {
+    background: rgba(225, 6, 0, 0);
+}
+
+.target-comms {
+    margin-top: 25px;
+    background: var(--paddock-dark);
+    border-left: 4px solid var(--f1-red);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transform: skewX(-3deg);
+}
+
+.target-icon { font-size: 2rem; color: var(--f1-red); }
+.target-text .label { display: block; font-size: 0.65rem; color: var(--txt-muted); font-weight: 800; }
+.target-text .role { font-size: 0.95rem; font-weight: 700; }
+
+.race-alert {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--f1-red);
+    letter-spacing: 3px;
+    background: rgba(225, 6, 0, 0.08);
+    padding: 6px 14px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+h1 { font-size: 3.8rem; font-weight: 900; text-transform: uppercase; line-height: 1.1; }
+.outline-txt { -webkit-text-stroke: 1px var(--txt-main); color: transparent; }
+
+.quick-specs {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed var(--asphalt-grid);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.quick-specs p { font-size: 0.95rem; margin-bottom: 8px; }
+.quick-specs p strong { color: var(--f1-red); }
+
+.driver-narrative { color: var(--txt-muted); font-size: 1.05rem; margin-bottom: 20px; }
+.driver-narrative strong { color: var(--txt-main); }
+
+/* ================= PAGE 2 DETAILS ================= */
+.telemetry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.spec-card {
+    background: var(--paddock-dark);
+    border: 1px solid var(--asphalt-grid);
+    padding: 35px 25px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.spec-icon { font-size: 3.2rem; margin-bottom: 20px; }
+.spec-card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 10px; }
+.spec-card p { color: var(--txt-muted); font-size: 0.9rem; line-height: 1.6; }
+
+.spec-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--f1-red);
+    box-shadow: 0 12px 30px rgba(225, 6, 0, 0.1);
+}
+
+/* ================= PAGE 3 DETAILS ================= */
+.race-projects-stack { display: flex; flex-direction: column; gap: 40px; }
+.f1-run-panel { background: var(--paddock-dark); border: 1px solid var(--asphalt-grid); }
+
+.run-header {
+    background: rgba(0,0,0,0.2);
+    padding: 20px 30px;
+    border-bottom: 1px solid var(--asphalt-grid);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.run-lap { font-family: monospace; font-weight: 900; color: var(--f1-red); font-size: 1.1rem; }
+.run-header h3 { font-size: 1.3rem; font-weight: 800; }
+
+.run-telemetry-body { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px; 
+    padding: 30px; 
+}
+.run-sector h5 { font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.run-sector p { color: var(--txt-muted); font-size: 0.95rem; line-height: 1.5; }
+
+.indicator { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+.indicator.red { background: var(--f1-red); }
+.indicator.white { background: var(--txt-main); }
+.indicator.green { background: var(--drs-green); }
+
+.tool-tags {
+    font-family: monospace;
+    background: var(--carbon-base);
+    color: var(--txt-main) !important;
+    padding: 8px 12px;
+    border: 1px solid var(--asphalt-grid);
+    display: inline-block;
+}
+
+/* --- Mobile Responsiveness (Responsive Component Scaling) --- */
+@media (max-width: 1024px) {
+    .dashboard-wrapper { 
+        flex-direction: column; 
+    }
+    .pit-sidebar { 
+        position: relative; 
+        width: 100%; 
+        height: auto; 
+        padding: 25px; 
+        border-right: none;
+        border-bottom: 2px solid var(--asphalt-grid);
+    }
+    .telemetry-menu { 
+        flex-direction: row; 
+        margin: 20px 0 0 0; 
+        overflow-x: auto; 
+        gap: 10px;
+    }
+    .menu-tab {
+        padding: 10px 14px;
+        white-space: nowrap;
+    }
+    .dashboard-screen { 
+        margin-left: 0; 
+        width: 100%;
+        padding: 40px 5%; 
+    }
+    .intro-layout { 
+        grid-template-columns: 1fr; 
+        gap: 40px;
+    }
+}
