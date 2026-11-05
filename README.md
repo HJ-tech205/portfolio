@@ -30,4 +30,4 @@ links: [{ label: "View on GitHub", href: "https://github.com/..." }]
 
 ## Download CV button
 
-Put your CV at `files/Nduvho-Mafadza-CV.pdf`. The button only appears when that file exists.
+Put your CV at `files/Mafadza_CV_.docx`. The button only appears when that file exists.
