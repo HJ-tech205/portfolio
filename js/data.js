@@ -29,7 +29,7 @@ window.CERTIFICATES = [
   },
   { id: "4IR", title: "Artificial Intelligence in the 4IR", issuer: "University of Johannesburg", status: "Achievement" , image :"images/4IR.png"},
   { id: "Powerpoint",  title: "Designing and Formatting a Presentation in
-PowerPoint", issuer: "Coursera", status: "Certificate",image :"/images/Powerpoint.png" },
+PowerPoint", issuer: "Coursera", status: "Certificate",image :"images/Powerpoint.png" },
   { id: "slot-5", placeholder: true, title: "Certificate coming soon", issuer: "", status: "" }
 ];
 
