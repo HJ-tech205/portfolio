@@ -3,247 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Dashboard</title>
+    <title>Nduvho Mafadza | Graduate Software Engineer</title>
+    <meta name="description" content="Final-year Computer Science & Informatics student at the University of Johannesburg. Java developer, backend lead on MainTenant, and QA-minded engineer.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
-    <div class="dashboard-wrapper">
-        
-        <aside class="pit-sidebar">
-            <div class="logo-zone">
-                <span class="team-brand">Nwahadji Nduvho Mafadza<span class="red-dot">...</span></span>🏎️
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ============ Navigation rail ============ -->
+    <header class="rail" id="rail">
+        <div class="rail-top">
+            <a class="brand" href="#home" aria-label="Nduvho Mafadza, home">
+                <span class="brand-mark">NM</span>
+                <span class="brand-name">Nduvho Mafadza</span>
+            </a>
+            <button class="rail-toggle" id="railToggle" aria-expanded="false" aria-controls="railNav" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <nav class="rail-nav" id="railNav" aria-label="Sections">
+            <a href="#home" class="active">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="rail-social">
+            <a href="https://github.com/HJ-tech205" target="_blank" rel="noopener" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+            <a href="https://www.linkedin.com/in/nduvho-mafadza" target="_blank" rel="noopener" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+            <a href="mailto:nwahadji.mafadza7@icloud.com" aria-label="Email"><i class='bx bx-envelope'></i></a>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- ============ Hero ============ -->
+        <section class="hero" id="home" aria-labelledby="heroTitle">
+            <div class="hero-copy">
+                <p class="role-line">Graduate Software Engineer</p>
+                <h1 id="heroTitle">
+                    <span class="h1-ink">Hi, I'm</span>
+                    <span class="h1-name">Nduvho<br>Mafadza.</span>
+                </h1>
+                <p class="skill-line">Java developer, quality assurance, problem solver</p>
+                <p class="hero-text">
+                    I'm a final-year Computer Science &amp; Informatics student at the University of Johannesburg.
+                    I build backend systems and test them properly. Most recently I led the backend of MainTenant,
+                    a maintenance platform for student residences.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-solid" href="#projects">View my projects</a>
+                    <a class="btn btn-line" id="cvButton" href="files/Nduvho-Mafadza-CV.pdf" download hidden>Download CV</a>
+                </div>
             </div>
-            <nav class="telemetry-menu">
-                <button class="menu-tab active" data-target="page-intro">
-                    <span class="sector-num">S1</span>
-                    <span class="tab-label">01 // DRIVER PROFILE</span>
-                </button>
-                <button class="menu-tab" data-target="page-tech">
-                    <span class="sector-num">S2</span>
-                    <span class="tab-label">02 // TELEMETRY STACK</span>
-                </button>
-                <button class="menu-tab" data-target="page-projects">
-                    <span class="sector-num">S3</span>
-                    <span class="tab-label">03 // FORMULA 1</span>
-                </button>
-            </nav>
-            <div class="sidebar-status">
-                <span class="live-pulse"></span> SYSTEM: ONLINE
+
+            <div class="hero-photo">
+                <img src="images/profile.jpeg" alt="Portrait of Nduvho Mafadza" width="959" height="1280">
+                <span class="shape shape-a" aria-hidden="true"></span>
+                <span class="shape shape-b" aria-hidden="true"></span>
             </div>
-        </aside>
 
-        <main class="dashboard-screen">
-
-            <section id="page-intro" class="portfolio-screen visible">
-                <div class="intro-layout">
-                    <div class="media-column">
-                        <div class="picture-housing">
-                            <img src="images/profile.jpeg" alt="Driver Portrait" class="driver-portrait">
-                            <div class="telemetry-tint-overlay"></div>
-                            <div class="glitch-scanline"></div>
-                        </div>
-                        <div class="target-comms" style="display: flex; flex-direction: column; gap: 12px;">
-                            <div style="display: flex; align-items: center; gap: 10px;">
-                                <i class='bx bx-target-lock target-icon'></i>
-                                <div class="target-text">
-                                    <span class="label">TARGET ROLE</span>
-                                    <span class="role">Graduate Software Engineer / QA Engineer</span>
-                                </div>
-                            </div>
-                            
-                            <!-- COMMS CHANNELS -->
-                            <div class="driver-comms" style="display: flex; gap: 15px; align-items: center; border-top: 1px solid #222; padding-top: 10px; margin-top: 2px;">
-                                <a href="mailto:nwahadji.mafadza7@icloud.com" style="color: #fff; text-decoration: none; display: flex; align-items: center; gap: 6px; font-size: 0.85rem;" title="Email">
-                                    <i class='bx bx-envelope' style='color: #ff3333; font-size: 1.1rem;'></i> Email
-                                </a>
-                                <a href="https://github.com/HJ-tech205" target="_blank" style="color: #fff; text-decoration: none; display: flex; align-items: center; gap: 6px; font-size: 0.85rem;" title="GitHub">
-                                    <i class='bx bxl-github' style='color: #00ff66; font-size: 1.1rem;'></i> GitHub
-                                </a >
-                                <a href="https://www.linkedin.com/in/nduvho-mafadza" target="_blank" style="color: #fff; text-decoration: none; display: flex; align-items: center; gap: 6px; font-size: 0.85rem;" title="LinkedIn">
-                                    <i class='bx bxl-linkedin' style='color: #0099ff; font-size: 1.1rem;'></i> LinkedIn
-                                </a>
-                            </div>
-                        </div>
+            <aside class="hero-panel" aria-label="Highlights">
+                <p class="tagline">Build.<br>Test.<br>Improve.</p>
+                <dl class="stats">
+                    <div class="stat">
+                        <dt>Project mark (MainTenant)</dt>
+                        <dd>74%</dd>
                     </div>
-
-                    <div class="text-column">
-                        <span class="race-alert"><i class='bx bx-radio'></i>IT'S HAMMERTIME</span>
-                        <h1>Who Is Behind <br><span class="outline-txt">The Machine?</span></h1>
-                        <div class="f1-divider"></div>
-
-                        <div class="quick-specs">
-                            <p><strong>Grid Position:</strong> Final Year Student, BSc Computer Science & Informatics (UJ)</p>
-                            <p><strong>Core Focus:</strong> Structural Backend Logic & Automation Workflows</p>
-                        </div>
-                        <p class="driver-narrative">
-                            I am a final-year <strong>Computer Science & Informatics</strong> student, transitioning from hands-on hardware repair to engineering high-performance digital systems. Every complex piece of software is an optimization challenge waiting to be cracked. My journey began with hardware engineering, but my passion completely shifted toward <strong>pure software automation</strong> moving away from tedious manual processes to design automated trading frameworks, predictive data pipelines, and low-latency system components.
-                        </p>
-                        <p class="driver-narrative">
-                            I am also deeply passionate about <strong>data science</strong> and rigorous software testing. Using R Studio, I build statistical models, behavioral risk simulations, and automated screening pipelines integrated with PostgreSQL databases, applying this same performance drive to spinning up clean <strong>web dashboards</strong> that behave like digital pit lane tracking stations.
-                        </p>
-                        <p class="driver-narrative">
-                            I am currently exploring the South African tech landscape for <strong>Graduate Software Engineering, Data Engineering, or QA Engineer</strong> opportunities where I can deploy this optimization mindset, refine automated data pipelines, and build production-ready systems that excel under load.
-                        </p>
+                    <div class="stat">
+                        <dt>UJenius Programme</dt>
+                        <dd>Top 1%</dd>
                     </div>
+                    <div class="stat stat-text">
+                        <dt>Degree</dt>
+                        <dd>BSc Computer Science &amp; Informatics, University of Johannesburg</dd>
+                    </div>
+                </dl>
+            </aside>
+        </section>
+
+        <!-- ============ Projects + stack ============ -->
+        <div class="showcase">
+            <section class="projects" id="projects" aria-labelledby="projectsTitle">
+                <h2 class="section-title" id="projectsTitle">Featured projects</h2>
+
+                <div class="card-grid">
+                    <button class="project-card" type="button" data-project="maintenant">
+                        <span class="card-media" aria-hidden="true">
+                            <svg viewBox="0 0 240 130" role="img">
+                                <rect x="14" y="12" width="212" height="106" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M14 56h92M106 12v44M106 80h120M150 80v38M60 56v62" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <rect x="16" y="14" width="88" height="40" class="fill-ok"/>
+                                <rect x="108" y="14" width="116" height="64" class="fill-warn"/>
+                                <rect x="16" y="58" width="42" height="58" class="fill-ok"/>
+                                <rect x="62" y="58" width="42" height="58" class="fill-ok"/>
+                                <rect x="108" y="82" width="40" height="34" class="fill-bad"/>
+                                <rect x="152" y="82" width="72" height="34" class="fill-ok"/>
+                                <circle cx="128" cy="98" r="5" fill="#16130F"/>
+                            </svg>
+                        </span>
+                        <span class="card-body">
+                            <span class="card-title">MainTenant</span>
+                            <span class="card-sub">Residence maintenance and compliance platform</span>
+                            <span class="tags"><span>Next.js</span><span>React Native</span><span>PostgreSQL</span></span>
+                        </span>
+                    </button>
+
+                    <button class="project-card" type="button" data-project="bugs">
+                        <span class="card-media" aria-hidden="true">
+                            <svg viewBox="0 0 240 130" role="img">
+                                <g fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="14" y="12" width="64" height="106"/>
+                                    <rect x="88" y="12" width="64" height="106"/>
+                                    <rect x="162" y="12" width="64" height="106"/>
+                                </g>
+                                <rect x="22" y="22" width="48" height="20" class="fill-bad"/>
+                                <rect x="22" y="48" width="48" height="20" class="fill-warn"/>
+                                <rect x="22" y="74" width="48" height="20" class="fill-warn"/>
+                                <rect x="96" y="22" width="48" height="20" class="fill-warn"/>
+                                <rect x="96" y="48" width="48" height="20" class="fill-ok"/>
+                                <rect x="170" y="22" width="48" height="20" class="fill-ok"/>
+                                <rect x="170" y="48" width="48" height="20" class="fill-ok"/>
+                                <rect x="170" y="74" width="48" height="20" class="fill-ok"/>
+                            </svg>
+                        </span>
+                        <span class="card-body">
+                            <span class="card-title">Bug Management System</span>
+                            <span class="card-sub">Track, prioritise and resolve software issues</span>
+                            <span class="tags"><span>Java</span><span>Spring Boot</span><span>React</span></span>
+                        </span>
+                    </button>
+
+                    <button class="project-card" type="button" data-project="ats">
+                        <span class="card-media" aria-hidden="true">
+                            <svg viewBox="0 0 240 130" role="img">
+                                <path d="M14 112h212M14 12v100" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <rect x="30" y="76" width="22" height="36" class="fill-ok"/>
+                                <rect x="64" y="56" width="22" height="56" class="fill-ok"/>
+                                <rect x="98" y="86" width="22" height="26" class="fill-ok"/>
+                                <rect x="132" y="40" width="22" height="72" class="fill-warn"/>
+                                <rect x="166" y="64" width="22" height="48" class="fill-ok"/>
+                                <rect x="200" y="28" width="18" height="84" class="fill-warn"/>
+                                <path d="M30 70 64 48 98 78 132 30 166 56 208 20" fill="none" stroke="#16130F" stroke-width="3"/>
+                            </svg>
+                        </span>
+                        <span class="card-body">
+                            <span class="card-title">ATS CV Screening Pipeline</span>
+                            <span class="card-sub">Automated resume screening with data analytics</span>
+                            <span class="tags"><span>R</span><span>PostgreSQL</span><span>SQL</span></span>
+                        </span>
+                    </button>
                 </div>
+
+                <h3 class="more-title">More work</h3>
+                <ul class="more-list">
+                    <li><button type="button" data-project="blisscrafted"><strong>BlissCrafted</strong><span>Event planning marketplace, 2nd year team project</span></button></li>
+                    <li><button type="button" data-project="graph"><strong>Recursive Hardware Graph Classifier</strong><span>Component sorting with graphs and matrices in R</span></button></li>
+                </ul>
             </section>
 
-            <section id="page-tech" class="portfolio-screen">
-                <div class="screen-header">
-                    <span class="screen-tag">// ENGINE & AERODYNAMICS</span>
-                    <h2>The Tech Stack</h2>
-                    <div class="f1-divider"></div>
-                </div>
+            <section class="skills" id="skills" aria-labelledby="skillsTitle">
+                <h2 class="section-title" id="skillsTitle">Tech stack</h2>
+                <ul class="stack-grid">
+                    <li><i class='bx bxl-java'></i><span>Java</span></li>
+                    <li><i class='bx bx-code-alt'></i><span>C#</span></li>
+                    <li><i class='bx bxl-c-plus-plus'></i><span>C++</span></li>
+                    <li><i class='bx bxl-python'></i><span>Python</span></li>
+                    <li><i class='bx bxl-spring-boot'></i><span>Spring Boot</span></li>
+                    <li><i class='bx bxl-react'></i><span>React</span></li>
+                    <li><i class='bx bx-mobile-alt'></i><span>React Native</span></li>
+                    <li class="wordmark"><b>N</b><span>Next.js</span></li>
+                    <li><i class='bx bxl-postgresql'></i><span>PostgreSQL</span></li>
+                    <li class="wordmark"><b>R</b><span>R Studio</span></li>
+                </ul>
+                <p class="stack-note">
+                    <strong>Testing:</strong> JUnit, Rest Assured and Postman. Studying for the ISTQB Foundation Level.
+                </p>
+            </section>
+        </div>
 
-                <div class="telemetry-grid">
-                    <div class="spec-card">
-                        <div class="card-glow"></div>
-                        <i class='bx bxl-visual-studio spec-icon' style='color: #239120;'></i>
-                        <h3>C#</h3>
-                        <p>Object-Oriented Architecture, Enterprise System Logic, and Backend Workflows.</p>
-                    </div>
-                    <div class="spec-card">
-                        <div class="card-glow"></div>
-                        <i class='bx bxl-java spec-icon' style='color: #ea2d2e;'></i>
-                        <h3>Java</h3>
-                        <p>Multi-Threaded Applications, Simulation Logic, and Algorithmic Sorting Routines.</p>
-                    </div>
-                    <div class="spec-card">
-                        <div class="card-glow"></div>
-                        <i class='bx bxl-c-plus-plus spec-icon' style='color: #00599c;'></i>
-                        <h3>C++</h3>
-                        <p>Low-Latency Computational Engines, Pointer Logic, and System Optimizations.</p>
-                    </div>
-                    <div class="spec-card">
-                        <div class="card-glow"></div>
-                        <i class='bx bx-data spec-icon' style='color: #336791;'></i>
-                        <h3>SQL & Postgres</h3>
-                        <p>Relational Database Administration, Heavy Ingestion Scripts, and Query Optimization.</p>
-                    </div>
-                    <div class="spec-card">
-                        <div class="card-glow"></div>
-                        <i class='bx bx-line-chart spec-icon' style='color: #276dc3;'></i>
-                        <h3>R Studio</h3>
-                        <p>Statistical processing, inverse transform risk modeling, and automated dataset ingestion pipelines.</p>
-                    </div>
-                    <div class="spec-card">
-                        <div class="card-glow"></div>
-                        <i class='bx bxl-react spec-icon' style='color: #00d8ff;'></i>
-                        <h3>Next.js</h3>
-                        <p>Full-stack React architectures, server-side rendering, and responsive interfaces mapped to secure endpoints.</p>
-                    </div>
-                    <div class="spec-card">
-                        <div class="card-glow"></div>
-                        <i class='bx bxl-python spec-icon' style='color: #3776ab;'></i>
-                        <h3>Python</h3>
-                        <p>Basic Automation Scripts, Core Syntax Fundamentals, and Logic Scripting Foundations.</p>
-                    </div>
-                    <div class="spec-card">
-                        <div class="card-glow"></div>
-                        <i class='bx bxl-html5 spec-icon' style='color: #e34c26;'></i>
-                        <h3>Web Stack</h3>
-                        <p>Responsive Interface Structures (HTML5, CSS3, JavaScript) linked with Dynamic API endpoints.</p>
-                    </div>
-                    <div class="spec-card">
-                        <div class="card-glow"></div>
-                        <i class='bx bx-check-shield spec-icon' style='color: #00ff66;'></i>
-                        <h3>QA Frameworks</h3>
-                        <p>Currently studying for ISTQB Foundation Level certification, focusing on fundamental software testing methodologies and core quality assurance principles.</p>
-                    </div>
+        <!-- ============ Certificates wheel ============ -->
+        <section class="certs" id="certificates" aria-labelledby="certsTitle">
+            <div class="certs-head">
+                <h2 class="section-title on-dark" id="certsTitle">Certificates</h2>
+                <p class="certs-hint">Drag the wheel, use the arrows, or press the left and right keys. Select the front certificate to view it.</p>
+            </div>
+
+            <div class="wheel" id="wheel" tabindex="0" aria-roledescription="carousel" aria-label="Certificates wheel">
+                <div class="wheel-stage" id="wheelStage">
+                    <div class="wheel-ring" id="wheelRing"></div>
                 </div>
+            </div>
+
+            <div class="wheel-controls">
+                <button type="button" class="wheel-btn" id="wheelPrev" aria-label="Previous certificate"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M15 4 7 12l8 8" fill="none" stroke="currentColor" stroke-width="2.6"/></svg></button>
+                <div class="wheel-caption" aria-live="polite">
+                    <p class="wheel-title" id="wheelTitle"></p>
+                    <p class="wheel-meta" id="wheelMeta"></p>
+                    <button type="button" class="btn btn-ghost" id="wheelOpen">View certificate</button>
+                </div>
+                <button type="button" class="wheel-btn" id="wheelNext" aria-label="Next certificate"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="m9 4 8 8-8 8" fill="none" stroke="currentColor" stroke-width="2.6"/></svg></button>
+            </div>
+        </section>
+
+        <!-- ============ Experience, education, contact ============ -->
+        <div class="lower">
+            <section class="experience" id="experience" aria-labelledby="expTitle">
+                <h2 class="section-title" id="expTitle">Experience</h2>
+                <article class="job">
+                    <h3>Co-Founder &amp; Technical Lead, iSore</h3>
+                    <p class="job-meta">Johannesburg, South Africa. Feb 2026 to present.</p>
+                    <p>Hardware repair venture specialising in component-level diagnostics and repairs for mobile devices and laptops.</p>
+                </article>
             </section>
 
-            <section id="page-projects" class="portfolio-screen">
-                <div class="screen-header">
-                    <span class="screen-tag">// RUN TRACE REVIEWS</span>
-                    <h2>Project Pit Lane</h2>
-                    <div class="f1-divider"></div>
-                </div>
-
-                <div class="race-projects-stack">
-                    <article class="f1-run-panel">
-                        <header class="run-header">
-                            <span class="run-lap">LAP 01</span>
-                            <h3>BlissCrafted (2nd Year Project)</h3>
-                        </header>
-                        <div class="run-telemetry-body">
-                            <div class="run-sector">
-                                <h5><span class="indicator red"></span> THE CHALLENGE</h5>
-                                <p>Traditional event planning is notoriously fragmented, manual, and stressful for users, lacking a centralized platform that bridges the gap between vendor e-commerce and coordination convenience.</p>
-                            </div>
-                            <div class="run-sector">
-                                <h5><span class="indicator white"></span> TEAM &amp; TOOLS</h5>
-                                <p>Developed within a collaborative development team to simulate real-world workflow engineering.</p>
-                                <div style="margin-top: 10px;">
-                                    <span class="tool-tags">Next.js</span>
-                                    <span class="tool-tags">React</span>
-                                    <span class="tool-tags">Supabase</span>
-                                </div>
-                            </div>
-                            <div class="run-sector">
-                                <h5><span class="indicator green"></span> THE SOLUTION</h5>
-                                <p>Engineered a direct e-commerce ecosystem that brings the end-to-end convenience of an event planner to an app. We enabled users to seamlessly book venues, order custom cakes, select flower arrangements, manage invitations, and purchase complete decor packages across corporate, birthday, and wedding events.</p>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <article class="f1-run-panel">
-                        <header class="run-header">
-                            <span class="run-lap">LAP 02</span>
-                            <h3>ATS Pipeline &amp; DB Ingestion</h3>
-                        </header>
-                        <div class="run-telemetry-body">
-                            <div class="run-sector">
-                                <h5><span class="indicator red"></span> THE PURPOSE</h5>
-                                <p>Built as a meaningful practical tool for my classmates to demonstrate how modern HR systems scan, track, and filter CVs, raising awareness about the critical technical skills needed to get past automated hiring screens.</p>
-                            </div>
-                            <div class="run-sector">
-                                <h5><span class="indicator white"></span> THE TOOLS USED</h5>
-                                <div style="margin-top: 10px;">
-                                    <span class="tool-tags">R Studio</span>
-                                    <span class="tool-tags">PostgreSQL</span>
-                                    <span class="tool-tags">SQL Scripts</span>
-                                </div>
-                            </div>
-                            <div class="run-sector">
-                                <h5><span class="indicator green"></span> THE SOLUTION</h5>
-                                <p>Created a simple script-driven pipeline that reads raw, unformatted text files from student resumes, extracts key performance indicators like technical stacks and academic metrics, and neatly inserts them into organized database tables for instant searching and filtering.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="f1-run-panel">
-                        <header class="run-header">
-                            <span class="run-lap">LAP 03</span>
-                            <h3>Recursive Hardware Graph Classifier</h3>
-                        </header>
-                        <div class="run-telemetry-body">
-                            <div class="run-sector">
-                                <h5><span class="indicator red"></span> THE PROBLEM</h5>
-                                <p>Sorting messy component distribution lines via classic primitive arrays creates massive calculation overhead and structural misclassifications.</p>
-                            </div>
-                            <div class="run-sector">
-                                <h5><span class="indicator white"></span> THE TOOLS USED</h5>
-                                <div style="margin-top: 10px;">
-                                    <span class="tool-tags">R Language</span>
-                                    <span class="tool-tags">igraph Library</span>
-                                    <span class="tool-tags">Matrix Algebra</span>
-                                </div>
-                            </div>
-                            <div class="run-sector">
-                                <h5><span class="indicator green"></span> THE SOLUTION</h5>
-                                <p>Built structural matrix classification trees capable of accurately segregating hardware components via complex profile signatures.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+            <section class="education" id="education" aria-labelledby="eduTitle">
+                <h2 class="section-title" id="eduTitle">Education</h2>
+                <article class="job">
+                    <h3>BSc Computer Science &amp; Informatics</h3>
+                    <p class="job-meta">University of Johannesburg. Final year.</p>
+                    <p>Top 1% in the UJenius Programme. Final-year project MainTenant graded 74%.</p>
+                </article>
             </section>
 
-        </main>
-    </div>
+            <section class="contact" id="contact" aria-labelledby="contactTitle">
+                <h2 class="section-title on-dark" id="contactTitle">Let's connect</h2>
+                <p>Open to graduate software engineering, data engineering and QA roles in South Africa.</p>
+                <ul class="contact-links">
+                    <li><a href="mailto:nwahadji.mafadza7@icloud.com"><i class='bx bx-envelope'></i>nwahadji.mafadza7@icloud.com</a></li>
+                    <li><a href="https://github.com/HJ-tech205" target="_blank" rel="noopener"><i class='bx bxl-github'></i>GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/nduvho-mafadza" target="_blank" rel="noopener"><i class='bx bxl-linkedin'></i>LinkedIn</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
 
+    <!-- ============ Case study window ============ -->
+    <dialog class="case" id="caseDialog" aria-labelledby="caseTitle">
+        <form method="dialog"><button class="dialog-close" aria-label="Close">Close</button></form>
+        <div class="case-inner" id="caseInner"></div>
+    </dialog>
+
+    <!-- ============ Certificate viewer ============ -->
+    <dialog class="viewer" id="viewerDialog" aria-label="Certificate viewer">
+        <form method="dialog"><button class="dialog-close" aria-label="Close">Close</button></form>
+        <div class="viewer-inner" id="viewerInner"></div>
+    </dialog>
+
+    <script src="js/data.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
