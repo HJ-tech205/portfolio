@@ -27,7 +27,7 @@ window.CERTIFICATES = [
     status: "In progress",
     image: ""
   },
-  { id: "slot-3", placeholder: true, title: "Certificate coming soon", issuer: "", status: "" },
+  { id: "4IR", title: "Artificial Intelligence in the 4IR", issuer: "University of Johannesburg", status: "Achievement" , image :"images/4IR.png"},
   { id: "slot-4", placeholder: true, title: "Certificate coming soon", issuer: "", status: "" },
   { id: "slot-5", placeholder: true, title: "Certificate coming soon", issuer: "", status: "" }
 ];
