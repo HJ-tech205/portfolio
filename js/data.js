@@ -21,11 +21,12 @@ window.CERTIFICATES = [
     image: ""
   },
   {
-    id: "istqb",
-    title: "ISTQB Foundation Level",
-    issuer: "ISTQB",
-    status: "In progress",
-    image: ""
+    id: "Powerpoint",
+    title: "g and Formatting a Presentation in
+PowerPoint",
+    issuer: "Coursera",
+    status: "Certificate",
+    image: "images/Powerpoint.png"
   },
   { id: "4IR", title: "Artificial Intelligence in the 4IR", issuer: "University of Johannesburg", status: "Achievement" , image :"images/4IR.png"},
   { id: "Powerpoint",  title: "Designing and Formatting a Presentation in
