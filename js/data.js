@@ -44,7 +44,7 @@ window.CERTIFICATES = [
   { id: "microsoft", 
    title: "Getting started with Microsoft 365", 
    issuer: "Coursera", 
-   status: "Cerificate" ,
+   status: "Certificate" ,
    image:"images/micro.png"}
 ];
 
