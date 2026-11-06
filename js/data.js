@@ -34,7 +34,11 @@ window.CERTIFICATES = [
     status: "Achievement",
     image: "images/4IR.png"
   },
-  { id: "slot-4", placeholder: true, title: "Certificate coming soon", issuer: "", status: "" }
+  { id: "microsoft", 
+   title: "Getting started with Microsoft 365", 
+   issuer: "Coursera", 
+   status: "Cerificate" ,
+   image:"images/micro.png"}
 ];
 
 window.PROJECTS = {
