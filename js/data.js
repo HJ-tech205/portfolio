@@ -34,6 +34,13 @@ window.CERTIFICATES = [
     status: "Achievement",
     image: "images/4IR.png"
   },
+   {
+    id: "star",
+    title: "Accomplishment STAR Techniques for Job Interviews",
+    issuer: "Coursera",
+    status: "Certificate",
+    image: "images/star.png"
+  },
   { id: "microsoft", 
    title: "Getting started with Microsoft 365", 
    issuer: "Coursera", 
