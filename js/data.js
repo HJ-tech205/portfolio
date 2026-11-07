@@ -17,7 +17,7 @@ window.CERTIFICATES = [
     id: "ujenius",
     title: "The UJenius Club 2023",
     issuer: "University of Johannesburg",
-    status: "Top-achieving students",
+    status: "Top 1% of students, per academic transcript",
     image: "images/ujenius.jpg"
   },
   {
