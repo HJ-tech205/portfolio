@@ -1,4 +1,4 @@
-# Nduvho Mafadza | Portfolio
+# Nwahadji Nduvho Mafadza | Portfolio
 
 Live site: https://hj-tech205.github.io/portfolio/
 

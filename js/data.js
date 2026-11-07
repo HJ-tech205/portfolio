@@ -17,7 +17,7 @@ window.CERTIFICATES = [
     id: "ujenius",
     title: "The UJenius Club 2023",
     issuer: "University of Johannesburg",
-    status: "Top 1% of students, per academic transcript",
+    status: "Top 1% of students, 2023",
     image: "images/ujenius.jpg"
   },
   {
@@ -105,7 +105,7 @@ window.PROJECTS = {
   blisscrafted: {
     title: "BlissCrafted",
     subtitle: "Event planning marketplace",
-    meta: "Second-year team project built with Next.js, React and Supabase.",
+    meta: "Second-year team project built with Next.js, React and Supabase. Result: 94%.",
     problem:
       "Planning an event means juggling separate vendors for venues, cakes, flowers and decor. There was no single platform that joined vendor shopping with coordination.",
     built: [

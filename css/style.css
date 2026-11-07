@@ -460,6 +460,9 @@ h1 {
 }
 .stack-grid .wordmark b { color: var(--ink); }
 
+.tools-title { font-weight: 700; font-size: 1rem; margin: 26px 0 4px; }
+.tools { margin-top: 0; padding-top: 8px; }
+
 .stack-note {
     margin-top: 22px;
     padding: 16px 18px;
